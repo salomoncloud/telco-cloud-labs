@@ -1,1 +1,14 @@
-sample logs to be stored here soon
+2025-07-14 13:21:55 INFO  [MPLS-MGR] Interface eth0.1 brought up successfully
+2025-07-14 13:22:01 WARN  [OSPF-DAEMON] Neighbor 10.1.1.2 state changed from FULL to DOWN
+2025-07-14 13:22:04 ERROR [BGP-SESSION] BGP session to 192.168.100.1 unexpectedly closed
+2025-07-14 13:22:09 INFO  [SYS-CHECK] CPU usage at 45%, memory usage at 61%
+2025-07-14 13:22:12 DEBUG [INTERFACE-MON] eth1.2 RX=12234 TX=11342 errors=0
+2025-07-14 13:22:16 INFO  [MPLS-MGR] LSP tunnel up: label=1003, next-hop=172.16.10.1
+2025-07-14 13:22:21 WARN  [SYNC-SVC] Time drift detected: 2.3 seconds behind NTP server
+2025-07-14 13:22:25 INFO  [BFD-MONITOR] BFD session to 10.0.0.2 is stable
+2025-07-14 13:22:31 ERROR [SYS-CHECK] Disk usage critical on /dev/sda1: 97%
+2025-07-14 13:22:35 INFO  [INTERFACE-MON] eth2.5 link flapped, state=DOWN
+2025-07-14 13:22:42 INFO  [INTERFACE-MON] eth2.5 link recovered, state=UP
+2025-07-14 13:22:50 DEBUG [BGP-SESSION] Keepalive received from 192.168.100.1
+2025-07-14 13:22:58 ERROR [MPLS-MGR] LSP tunnel failure detected, label=1003
+2025-07-14 13:23:04 WARN  [OSPF-DAEMON] Retransmit timer expired for neighbor 10.1.1.2
