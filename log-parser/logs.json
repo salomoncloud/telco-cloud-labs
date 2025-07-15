@@ -1,0 +1,20 @@
+[
+    {
+        "timestamp": "2025-07-14T13:22:04",
+        "level": "ERROR",
+        "module": "BGP-SESSION",
+        "message": "BGP session to 192.168.100.1 unexpectedly closed"
+    },
+    {
+        "timestamp": "2025-07-14T13:22:31",
+        "level": "ERROR",
+        "module": "SYS-CHECK",
+        "message": "Disk usage critical on /dev/sda1: 97%"
+    },
+    {
+        "timestamp": "2025-07-14T13:22:58",
+        "level": "ERROR",
+        "module": "MPLS-MGR",
+        "message": "LSP tunnel failure detected, label=1003"
+    }
+]
