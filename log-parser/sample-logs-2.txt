@@ -1,0 +1,3 @@
+2025-07-15 13:21:55 INFO  [FIBER-DEGRADE] Interface AGW55 2/4/7 DOWN
+2025-07-15 13:22:01 WARN  [ICMP-DROPPED] Neighbor 10.1.1.14 state changed from FULL to DOWN
+2025-07-15 13:22:04 ERROR [BGP-SESSION] BGP session to 192.168.100.209 unexpectedly closed
