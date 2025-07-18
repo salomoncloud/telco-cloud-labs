@@ -1,10 +1,15 @@
-2025-07-15 09:04:12 [INFO] S1AP Connection established with eNodeB ID 3205 (Cell ID 17A2) via S1-MME.
-2025-07-15 09:04:13 [WARNING] RX Optical power low on interface GE-0/0/12, threshold breached at -19.6 dBm (limit: -18 dBm).
-2025-07-15 09:04:15 [ERROR] SCTP Association failed for IMS Core Link ID 7013 - Cause: Unreachable IP 10.254.12.1.
-2025-07-15 09:04:18 [INFO] New SIP INVITE received from UE 310260123456789 for IMS service registration.
-2025-07-15 09:04:20 [ALERT] High packet loss detected (12.4%) on VLAN 101 trunked through Mux-DWDM-2 – circuit degradation suspected.
-2025-07-15 09:04:25 [INFO] GTPv2-C Create Session Response received for IMSI 208930000001234 – bearer established.
-2025-07-15 09:04:27 [CRITICAL] Core router BGP session to peer 192.168.255.1 unexpectedly reset – route convergence in progress.
-2025-07-15 09:04:32 [ERROR] DNS resolution failed for FQDN ims.montreal.ericsson.net during SIP REGISTER flow.
-2025-07-15 09:04:35 [INFO] RRC Connection Reconfiguration completed for UE 310260123456789 – bearer QoS updated.
-2025-07-15 09:04:39 [WARNING] NodeB heartbeat missed for 3 consecutive intervals – transport path instability likely.
+2025-07-17 09:04:12 [INFO] S1AP Connection established with eNodeB ID 3205 (Cell ID 17A2) via S1-MME.
+2025-07-17 09:04:13 [WARNING] RX Optical power low on interface GE-0/0/12, threshold breached at -19.6 dBm (limit: -18 dBm).
+2025-07-17 09:04:15 [ERROR] SCTP Association failed for IMS Core Link ID 7013 - Cause: Unreachable IP 10.254.12.1.
+2025-07-17 09:04:18 [INFO] New SIP INVITE received from UE 310260123456789 for IMS service registration.
+2025-07-17 09:04:20 [ALERT] High packet loss detected (12.4%) on VLAN 101 trunked through Mux-DWDM-2 – circuit degradation suspected.
+2025-07-17 09:04:25 [INFO] GTPv2-C Create Session Response received for IMSI 208930000001234 – bearer established.
+2025-07-17 09:04:27 [CRITICAL] Core router BGP session to peer 192.168.255.1 unexpectedly reset – route convergence in progress.
+2025-07-17 09:04:32 [ERROR] DNS resolution failed for FQDN ims.montreal.ericsson.net during SIP REGISTER flow.
+2025-07-17 09:04:35 [INFO] RRC Connection Reconfiguration completed for UE 310260123456789 – bearer QoS updated.
+2025-07-17 09:04:39 [WARNING] NodeB heartbeat missed for 3 consecutive intervals – transport path instability likely.
+2025-07-18 10:07:39 [CRITICAL] Ciena6500 overheated, links bouncing – transport path instability likely.
+2025-07-18 12:45:09 [CRITICAL] IMS Core unresponsive – ...
+2025-07-18 12:45:09 [CRITICAL] IMS Core unresponsive – ...
+2025-07-18 13:45:10 [ERROR] ICMP Healthcheck Failures on multiple sites.
+2025-07-19 04:36:44 [INFO] IMS Core Services Restored - OSPF paths Reconfigured.
