@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telecom Log Dashboard</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <style>
+        body { font-family: monospace; background: #1a1a1a; color: #00ffe0; padding: 20px; }
+        #logs { white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h2>📡 Live Telecom Logs</h2>
+    <div id="logs"></div>
+
+    <script>
+        const socket = io();
+        socket.on('log_line', function(msg) {
+            const logs = document.getElementById('logs');
+            logs.innerText += msg.data + '\n';
+            logs.scrollTop = logs.scrollHeight;
+        });
+    </script>
+</body>
+</html>
 
