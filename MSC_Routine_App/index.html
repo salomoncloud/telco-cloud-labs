@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSC Technical Rounds</title>
+  <!-- Tailwind CSS (CDN) and Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Tailwind theme config for Ericsson colors -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ericsson-blue': '#002561',
+            'ericsson-light-grey': '#F5F5F5',
+            'ericsson-medium-grey': '#9E9E9E',
+            'status-new': '#D32F2F',
+            'status-progress': '#F57C00',
+            'status-closing': '#388E3C'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- External CSS files -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+</head>
+<body class="bg-ericsson-light-grey min-h-screen">
+  <!-- Header -->
+  <header class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <h1 class="text-2xl font-bold text-ericsson-blue tracking-tight">
+          MSC Technical Rounds
+        </h1>
+        <div class="flex items-center space-x-4">
+          <div class="text-ericsson-blue">
+            <i class="fas fa-user-circle mr-2"></i>
+            Welcome
+          </div>
+          <button id="logoutBtn" class="text-ericsson-blue hover:text-ericsson-light-grey transition-colors">
+            <i class="fas fa-sign-out-alt text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-6 py-6">
+    <!-- Filter Bar -->
+    <div class="bg-white rounded-xl border border-gray-200 p-5 mb-6 shadow-sm">
+      <div class="flex flex-wrap items-center gap-4">
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-map-marker-alt text-ericsson-blue"></i>
+          <select id="siteFilter" class="border border-gray-300 rounded-lg px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ericsson-blue focus:border-transparent">
+            <option value="all">All MSCs</option>
+            <option value="place-bonaventure">Place Bonaventure</option>
+            <option value="bridge">Bridge</option>
+            <option value="notre-dame">Notre-Dame</option>
+            <option value="cote-de-liesse">Cote De Liesse</option>
+          </select>
+        </div>
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-calendar-alt text-ericsson-blue"></i>
+          <select id="dateFilter" class="border border-gray-300 rounded-lg px-3 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ericsson-blue focus:border-transparent">
+            <option value="today">Today</option>
+            <option value="week">Last 7 days</option>
+            <option value="month">Last 30 days</option>
+            <option value="custom">Custom range</option>
+          </select>
+        </div>
+        <div class="ml-auto">
+          <button class="bg-ericsson-blue text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-900 transition-colors flex items-center space-x-2">
+            <i class="fas fa-plus"></i>
+            <span>Start Round</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <!-- New Issues Card -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 card-hover cursor-pointer">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+            <i class="fas fa-exclamation-triangle text-status-new text-xl"></i>
+          </div>
+          <span class="text-xs text-gray-500 font-medium">+2 today</span>
+        </div>
+        <div class="text-3xl font-bold text-gray-900 mb-1">3</div>
+        <div class="text-sm text-gray-600 font-medium">New Issues</div>
+      </div>
+      <!-- In Progress Card -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 card-hover cursor-pointer">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+            <i class="fas fa-clock text-status-progress text-xl"></i>
+          </div>
+          <span class="text-xs text-gray-500 font-medium">7 active</span>
+        </div>
+        <div class="text-3xl font-bold text-gray-900 mb-1">7</div>
+        <div class="text-sm text-gray-600 font-medium">In Progress</div>
+      </div>
+      <!-- Ready to Close Card -->
+      <div class="bg-white rounded-xl border border-gray-200 p-6 card-hover cursor-pointer">
+        <div class="flex items-center justify-between mb-4">
+          <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+            <i class="fas fa-check-circle text-status-closing text-xl"></i>
+          </div>
+          <span class="text-xs text-gray-500 font-medium">pending review</span>
+        </div>
+        <div class="text-3xl font-bold text-gray-900 mb-1">2</div>
+        <div class="text-sm text-gray-600 font-medium">Ready to Close</div>
+      </div>
+    </div>
+
+    <!-- Recent Activity (Task Feed) -->
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+      <div class="px-6 py-5 border-b border-gray-200 flex items-center justify-between">
+        <h2 class="text-lg font-semibold text-gray-900">Recent Activity</h2>
+        <div class="flex items-center space-x-2">
+          <button class="text-gray-500 hover:text-gray-700 p-2 rounded-lg hover:bg-gray-100">
+            <i class="fas fa-filter"></i>
+          </button>
+          <button id="addTaskBtn" class="bg-ericsson-blue text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-900 transition-colors flex items-center space-x-2">
+            <i class="fas fa-plus"></i>
+            <span>Add Task</span>
+          </button>
+        </div>
+      </div>
+      <div class="p-6" id="taskFeed">
+        <!-- Task cards will be injected here -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating Action Button for adding a task (visible on all screens) -->
+  <button class="fab bg-ericsson-blue text-white flex items-center justify-center hover:bg-blue-900">
+    <i class="fas fa-plus text-xl"></i>
+  </button>
+
+  <!-- Empty State Template (hidden by default) -->
+  <div id="emptyState" class="text-center py-16 hidden">
+    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+      <i class="fas fa-check-circle text-status-closing text-3xl"></i>
+    </div>
+    <h3 class="text-2xl font-semibold text-status-closing mb-2">Nothing To Report!</h3>
+    <p class="text-gray-600 text-lg">Great work, team!</p>
+  </div>
+
+  <!-- External JS files -->
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/tasks.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

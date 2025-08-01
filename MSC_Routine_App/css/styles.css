@@ -1,0 +1,47 @@
+/* Import Ericsson brand font (Inter) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Global font and element resets */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Floating Action Button base style */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 37, 97, 0.3);
+}
+.fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(0, 37, 97, 0.4);
+}
+
+/* Status badge text style */
+.status-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Fade-in animation for page content */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Pulse animation for highlighting task cards (used in real-time update simulation) */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
